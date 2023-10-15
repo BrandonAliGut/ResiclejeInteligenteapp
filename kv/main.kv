@@ -1,0 +1,665 @@
+#:import CardTransition kivy.uix.screenmanager.CardTransition
+#: import WipeTransition kivy.uix.screenmanager.WipeTransition
+#: import RiseInTransition kivy.uix.screenmanager.RiseInTransition
+#:import effect kivy.uix.effectwidget.EffectWidget
+#:import HorizontalBlurEffect kivy.uix.effectwidget.HorizontalBlurEffect
+#:import VerticalBlurEffect kivy.uix.effectwidget.VerticalBlurEffect
+
+<InicioPrimario>:
+    name: "Properpantalla"
+    pos_hint:{'center_x':.5, 'center_y':.5}
+    
+
+    MDNavigationLayout:
+        ScreenManager:
+            transition: RiseInTransition()
+            Screen:
+                id: pangina_1
+                MDBoxLayout:
+                    id: pangina_2
+               
+                    
+                
+                MDBoxLayout:
+                    md_bg_color:app.theme_cls.bg_dark #[238/255,238/255,239/255,1]
+                    orientation: 'vertical'
+                    
+                    
+
+                    MDTopAppBar:
+                        md_bg_color: [0,154/255,0,1]
+                        elevation: 0
+                        left_action_items: [["menu", lambda x: app.callback(x)]]
+                        spacing:0
+                        padding: ('0dp', '0dp', '0dp', '0dp')
+                        
+                    
+                    ScreenManager:
+                        id: screen_manager
+                        transition: RiseInTransition(duration = .2, clearcolor = (233/255,234/255,233/255,.2))
+                        Home:
+                            name: "Home"
+                            MDScrollView:
+                                MDList:
+
+                                    cols: 1
+                                    spacing: '10dp'
+                                    padding: ('22dp', '22dp', '22dp', '22dp')
+                                    
+                                    MDCard:
+                                        orientation: 'vertical'
+                                        size_hint_x: .7
+                                        size_hint_y: None
+                                        height: dp(150)
+                                        padding: ('5dp', '5dp', '5dp', '5dp')
+                                        focus_behavior: False
+                                        pos_hint: {"center_x": .5, "center_y": .5}
+                                        md_bg_color: (233/255,234/255,233/255,0)
+                                        elevation: 0
+                                        MDBoxLayout:
+                                            orientation: 'vertical'
+                                            padding: ('20dp', '20dp', '20dp', '20dp')
+                                            spacing: '20dp'
+                                            MDLabel:
+                                                text: "Entrega de reciclaje"
+                                                theme_text_color: "Custom"
+                                                font_style: 'H4'
+                                                bold: True
+                                            MDLabel:
+                                                text: "¿Cómo quieres entregar tu reciclaje hoy?"
+                                                theme_text_color: "Custom"
+                                                bold: True
+                                                font_style: 'H5'
+                                                
+
+                                    
+                                    Button_carinfo:
+                                        textend:"Contactar a reciclador/a y registrar entrega"
+                                        textbutton:"Contactar"
+                                        icon:'account-group'
+                                    Button_carinfo:
+                                        textend:"Entregar en estación de reciclaje"
+                                        textbutton:"Contactar"
+                                        icon:'account-group'
+
+                                    Button_carinfo:
+                                        textend:"Entregar en centro de acopio"
+                                        textbutton:"Contactar"
+                                        icon:'account-group'
+                                    Button_carinfo:
+                                        textend:"Solicitar retiro a mi puerta"
+                                        textbutton:"Contactar"
+                                        icon:'account-group'
+                                    Button_carinfo:
+                                        textend:"Quiero saber cómo reciclar"
+                                        textbutton:"Contactar"
+                                        icon:'account-group'
+                                    
+       
+
+                            
+                        Category_selection:
+                            name: "Category_selection"
+                            id: category_selection_id
+                            MDScrollView:
+                                MDList:
+
+                                    cols: 1
+                                    spacing: '15dp'
+                                    padding: ('22dp', '22dp', '22dp', '22dp')
+                                    MDCard:
+                                        orientation: 'vertical'
+                                        size_hint_x: .7
+                                        size_hint_y: None
+                                        height: dp(150)
+                                        padding: ('5dp', '5dp', '5dp', '5dp')
+                                        focus_behavior: False
+                                        pos_hint: {"center_x": .5, "center_y": .5}
+                                        md_bg_color: (233/255,234/255,233/255,0)
+                                        elevation: 0
+                                        MDBoxLayout:
+                                            orientation: 'vertical'
+                                            padding: ('20dp', '20dp', '20dp', '20dp')
+                                            spacing: '10dp'
+                                            MDLabel:
+                                                text: "Tipos de Materiales"
+                                                theme_text_color: "Custom"
+                                                font_style: 'H4'
+                                                bold: True
+                                            MDLabel:
+                                                text: "Seleccione el material"
+                                                theme_text_color: "Custom"
+                                                bold: True
+                                                font_style: 'H5'
+                                    Card_Category:
+                                        title:"Papel"
+                                        textbutton:"Contactar"
+                                        sourceImg:""
+                                        icon:"./source/Icon/whatsapp_5968841.png" 
+
+    
+                        Sobre_Nosotros:
+                            name: "Sobre_Nosotros"
+       
+                
+
+
+<Button_carinfo@MDCard>:
+    textend:''
+    textbutton:''
+    icon:''
+    orientation: 'vertical'
+    size_hint_x: .7
+    size_hint_y: None
+    height: dp(160)
+    padding: ('5dp', '5dp', '5dp', '5dp')
+    focus_behavior: False
+    pos_hint: {"center_x": .5, "center_y": .5}
+    md_bg_color: (233/255,234/255,233/255,1)
+    unfocus_color: (233/255,234/255,233/255,1)
+    focus_color: (0,154/255,0,.2)
+    radius:'20dp'
+    elevation: 0
+    MDBoxLayout:
+        padding: ('20dp', '20dp', '20dp', '20dp')
+        MDLabel:
+            text: root.textend
+            theme_text_color: "Custom"
+            font_style: 'H5'
+
+    MDBoxLayout:
+        padding: ('20dp', '20dp', '20dp', '20dp')
+        size_hint_x: .5
+        size_hint_min_x:.4
+        orientation: 'vertical'
+    
+        MDCard:
+            pos_hint: {'center_x': 1.8,'center_y': 0.5}
+            size_hint_x: None
+            size_hint_y: None
+            width: dp(160)
+            height: dp(45)
+            focus_behavior: False
+            md_bg_color: (0,154/255,0,1)
+            radius:'25dp'
+            elevation: 0
+            padding: ('10dp', '10dp', '10dp', '10dp')
+            on_release:
+                app.category_selection_funcion(root.textbutton)
+                app.wn.screens[1].ids["screen_manager"].current = 'Category_selection'
+                
+                
+            MDLabel:
+                text: root.textbutton
+                theme_text_color: "Custom"
+                text_color: [1,1,1,1]
+                font_style: 'Button'
+            MDIconButton:
+                pos_hint: {'center_x': 0.5,'center_y': 0.6}
+                icon: root.icon
+                theme_icon_color: "Custom"
+                icon_color: (1,1,1,1)
+                icon_size: "30sp"
+
+<Sobre_Nosotros>:
+
+    MDScrollView:
+        MDList:
+            cols: 1
+            
+           
+            FitImage:
+                    
+                id: Image_LOGO
+                size_hint_y: None
+                height: 150
+                
+                
+                
+                pos_hint: {'center_x': 0.5,'center_y': 0.5}
+                source: 
+                source: './source/logos/Resiclaje.png'
+            MDCard:
+                
+                orientation: 'vertical'
+                size_hint_y: None
+                radius: dp(20)
+                md_bg_color: 1,1,1,0
+                height: text1.height +text01.height   + 70
+                spacing:dp(10)
+                padding: [10,]
+                MDLabel:
+                    id: text1
+                    theme_text_color: "Custom"
+                    font_style: 'H4'
+                    halign: 'center'
+                    
+                    size_hint_y: None
+                    text_color: app.pwhite 
+                    bold: True
+                    size: self.texture_size
+                    text: "¡Presentamos Reciclaje Inteligente!"
+
+                MDLabel:
+                    id: text01
+                    theme_text_color: "Custom"
+                    font_style: 'H6'
+                    halign: 'justify'
+                    
+                    size_hint_y: None
+                    text_color: app.pwhite 
+                    
+                    size: self.texture_size
+                    text: "Nuestra innovadora app móvil está revolucionando el reciclaje en pro del impacto social y ambiental. 🌱🤝"
+            MDRelativeLayout:
+                size_hint_y: None
+                height: dp(200)
+                
+                MDRelativeLayout:
+                    md_bg_color: app.color_bar
+                    size_hint_y: None
+                    height: dp(60)
+                    orientation: 'vertical'
+                    size_hint_x: .7
+                    pos_hint: {'center_x': .7,'center_y': 0.5}
+                    radius: dp(2)
+                    FitImage:
+                        
+                        id: Image_inform
+                        size_hint: None, None
+                        radius: 100
+                        line_color:app.color_bar
+                        line_width: dp(2)
+                        height: dp(200)
+                        width: dp(200)
+                        pos_hint: {'center_x': 0.0,'center_y': 0.5}
+                        source: './source/logos/LOGO-VERDE-PNG-150x150 (1).png'
+
+            MDBoxLayout:
+                size_hint_y: None
+                height: dp(60)
+                MDLabel:
+                    id: text1
+                    theme_text_color: "Custom"
+                    font_style: 'H5'
+                    halign: 'center'
+                    
+                    size_hint_y: None
+                    text_color: app.pwhite 
+                    bold: True
+                    size: self.texture_size
+                    text: "Somos el equipo Tlatoani Cafén"
+            MDGridLayout:
+                cols: 2
+                id: griControl
+
+                size_hint_y: None
+               
+                height: Window.width 
+
+                MDBoxLayout:
+                    size_hint_y: None
+                    height: griControl.width 
+                    RelativeLayout:
+                        
+                        orientation: 'vertical'
+                        size_hint_y: None
+                        height: griControl.width 
+                        
+                        padding: ('10dp', '10dp', '10dp', '10dp')
+                        spacing: dp(10)
+                        MDBoxLayout:
+                            size_hint: None, None
+                            id: imagg
+                            width: griControl.width / 3
+                            height: griControl.width / 3
+                            md_bg_color: app.color_bar
+                            radius: 10
+                            pos_hint: {'center_x': 0.5,'center_y': 0.6}
+                            MDBoxLayout:
+                                size_hint: None, None
+                                id: imagg
+                                width: griControl.width / 3
+                                height: griControl.width / 3
+                                md_bg_color: app.color_bar
+                                radius: 10
+                                pos_hint: {'center_x': 0.5,'center_y': 0.4}
+
+                                FitImage:
+                                    id: Image_inform
+                                    size_hint: None, None
+                                    radius: 10
+                                    width: griControl.width / 3
+                                    height: griControl.width / 3
+                                    
+                                    padding: ('0dp', '0dp', '5dp', '10dp')
+                                    pos_hint: {'center_x': 0.5,'center_y': 0.5}
+                                    source: './source/Img/R (12).jpg'
+                            
+
+                        MDBoxLayout:
+                            size_hint: None, None
+                            id: imagg
+                            width: griControl.width / 3
+                            height: griControl.width / 3
+                            md_bg_color: app.color_bar
+                            radius: 10
+                            pos_hint: {'center_x': 0.5,'center_y': 0.2}
+                            MDBoxLayout:
+                                size_hint: None, None
+                                id: imagg
+                                width: griControl.width / 3
+                                height: griControl.width / 3
+                                md_bg_color: app.color_bar
+                                radius: 10
+                                pos_hint: {'center_x': 0.5,'center_y': 0.4}
+
+                                FitImage:
+                                    id: Image_inform
+                                    size_hint: None, None
+                                    radius: 10
+                                    width: griControl.width / 3
+                                    height: griControl.width / 3
+                                    
+                                    padding: ('0dp', '0dp', '5dp', '10dp')
+                                    pos_hint: {'center_x': 0.5,'center_y': 0.5}
+                                    source: './source/Img/conservation-green-sign-ecology-nature.jpg'
+                        
+
+
+                MDBoxLayout:
+                    size_hint: None, None
+                    height: griControl.width 
+                    padding: ('10dp', '10dp', '10dp', '10dp')
+                    
+                       
+                    width: (griControl.width / 2)
+                    
+                 
+                    MDGridLayout:
+                        cols: 1
+                        size_hint_x: None
+                       
+                        width: (griControl.width / 2)
+                        spacing: dp(10)
+
+                        MDBoxLayout:
+                            size_hint: None, None
+                            width: griControl.width 
+                            height: griControl.width  
+                           
+                            radius: 10
+                            MDBoxLayout:
+                                size_hint: None, None
+                                width: (griControl.width / 2 )  + dp(150)
+                                height: (griControl.width / 2) + dp(150) 
+                                md_bg_color: app.color_bar
+                                pos_hint: {'center_x': 0.5,'center_y': 0.4}
+                                radius: 10
+                                FitImage:
+                                    id: Image_inform
+                                    radius: 10
+                                    padding: ('10dp', '10dp', '10dp', '10dp')
+
+                                    source: './source/Img/Imagen.jpg'
+
+            
+            MDBoxLayout:
+                size_hint_y: None
+                height: dp(50)
+            
+            MDBoxLayout:
+                size_hint_y: None
+                height: dp(60)
+                MDLabel:
+                    id: text1
+                    theme_text_color: "Custom"
+                    font_style: 'H6'
+                    halign: 'center'
+                    
+                    size_hint_y: None
+                    text_color: app.pwhite 
+                    bold: True
+                    size: self.texture_size
+                    text: "Clasifica tus materiales en categorías como plástico, papel, vidrio y más. ¡Haz del reciclaje una actividad sencilla y efectiva!"
+
+            
+            MDBoxLayout:
+                size_hint_y: None
+                height: dp(70)
+                
+                MDBoxLayout:
+                    orientation: "vertical"
+                    adaptive_height: True
+                    MDBoxLayout:
+                        pos_hint: {'center_x': .5}
+                        orientation: "vertical"
+                        adaptive_height: True
+                        adaptive_width: True
+                        
+                        MDGridLayout:
+                            cols: 3
+                            spacing:dp(40)
+                            size_hint: None, None
+                            size: self.minimum_size
+                            pos_hint: {'center_x': 0.5,'center_y': 0.5}
+                            
+                            halign: "center"
+                            MDBoxLayout:
+                                size_hint: None, None
+                                width: 60
+                                height: 60
+                                md_bg_color: app.color_bar
+                                radius: 10
+                                pos_hint: {'center_x': 0.5,'center_y': 0.3}
+
+                                FitImage:
+                                    id: Image_inform
+                                    radius: 10
+                                    padding: ('0dp', '0dp', '5dp', '10dp')
+                                    source: './source/Img/Vidrio.jpg'
+                            MDBoxLayout:
+                                size_hint: None, None
+                                width: 60
+                                height: 60
+                                md_bg_color: app.color_bar
+                                radius: 10
+                                pos_hint: {'center_x': 0.5,'center_y': 0.3}
+
+                                FitImage:
+                                    id: Image_inform
+                                    radius: 10
+                                    padding: ('0dp', '0dp', '5dp', '10dp')
+                                    source: './source/Img/R (13).jpg'
+                            MDBoxLayout:
+                                size_hint: None, None
+                                width: 60
+                                height: 60
+                                md_bg_color: app.color_bar
+                                radius: 10
+                                pos_hint: {'center_x': 0.5,'center_y': 0.3}
+
+                                FitImage:
+                                    id: Image_inform
+                                    radius: 10
+                                    padding: ('0dp', '0dp', '5dp', '10dp')
+                                    source: './source/Img/R (14).jpg'
+
+            MDBoxLayout:
+                size_hint_y: None
+                height: dp(70)        
+            MDRelativeLayout:
+                size_hint_y: None
+                height: idtextapp.height
+                
+                MDRelativeLayout:
+                    md_bg_color: app.color_bar
+                    size_hint_y: None
+                    height: idtextapp.height
+                    orientation: 'vertical'
+                    size_hint_x: .8
+                    pos_hint: {'center_x': .7,'center_y': 0.5}
+                    radius: dp(10)
+                    padding: ('5dp', '5dp', '5dp', '5dp')
+                    MDRelativeLayout:
+                        md_bg_color: app.color_bar
+                        size_hint_y: None
+                        height: idtextapp.height
+                        orientation: 'vertical'
+                        size_hint_x: .8
+                        pos_hint: {'center_x': .4,'center_y': 0.5}
+                        padding: ('10dp', '10dp', '10dp', '10dp')
+                       
+                        radius: dp(10)
+                        MDLabel:
+                            id: idtextapp
+                            theme_text_color: "Custom"
+                            font_style: 'H6'
+                            halign: 'justify'
+                            spacing:dp(4)
+                            size_hint_y: None
+                            text_color: app.pwhite 
+                            bold: True
+                            size: self.texture_size
+                            text: "Aprende sobre el impacto del reciclaje en nuestro planeta."
+            MDBoxLayout:
+                size_hint_y: None
+                height: dp(20) 
+            MDBoxLayout:
+                size_hint_y: None
+                height: dp(60)
+                MDLabel:
+                    id: text1
+                    theme_text_color: "Custom"
+                    font_style: 'H6'
+                    halign: 'center'
+                    
+                    size_hint_y: None
+                    text_color: app.pwhite 
+                    bold: True
+                    size: self.texture_size
+                    text: " Conviértete en un defensor del medio ambiente y comparte tus conocimientos con otros."
+            MDBoxLayout:
+                size_hint_y: None
+                height: dp(20) 
+            MDBoxLayout:
+                size_hint_y: None
+                height: dp(70) 
+            MDCard:
+                md_bg_color: app.color_box_color_u
+                orientation: 'vertical'
+                size_hint_y: None
+                radius: dp(20)
+                
+                height: box1.height +20
+                padding: [10,]
+                MDBoxLayout:
+                    id: box1
+                    orientation: 'vertical'
+                    size_hint_y: None
+                    height: text2.height
+                    MDLabel:
+                        id: text2
+                        theme_text_color: "Custom"
+                        font_style: 'H6'
+                        halign: 'justify'
+                        text_color: app.pwhite
+                        size: self.texture_size
+                        text: "Dentro de nuestro modelo de negocio hemos creado contactos con empresas nacionales, quienes será nuestros principales clientes, de igual forma nos hemos contactados como una red de recolectores quienes serán los encargados de recepcionar los residuos, estás acciones lograrán que nuestro proyecto tenga factibilidad.Nuestra visión es grande. Queremos unir a instituciones del estado, organizaciones y a cada individuo. Cada acción cuenta. Únete a la revolución y sé parte del cambio. Juntos, construimos un futuro sostenible para las generaciones venideras.Reciclaje Inteligente"
+                
+
+
+
+<Card_Category@MDCard>:
+    title:''
+    textbutton:''
+    sourceImg: ''
+    icon:''
+    orientation: 'vertical'
+    size_hint_x: .7
+    size_hint_y: None
+    height: dp(490)
+    
+    focus_behavior: False
+    pos_hint: {"center_x": .5, "center_y": .5}
+    md_bg_color: (233/255,234/255,233/255,1)
+    unfocus_color: (233/255,234/255,233/255,1)
+    focus_color: (0,154/255,0,.2)
+    radius:'20dp'
+    elevation: 0
+    MDRelativeLayout:
+        size_hint_y: None
+        box_radius: [20, 20, 0, 0]
+        height: dp(200)
+        
+        MDSmartTile:
+            box_position: "header"
+            box_radius: [20, 20, 0, 0]
+            box_color: 0, 1, 0, .1
+            size_hint_y: None
+            
+            height: dp(200)
+            
+            source:"./source/logos/LOGO-VERDE-PNG-150x150 (1).png" 
+        MDBoxLayout:
+            size_hint_y: None
+            radius: [20, 20, 0, 0]
+            height: dp(200)
+            md_bg_color: app.color_oscuro_img
+            pos_hint:{"center_x":.5}
+            orientation: 'vertical'
+        MDLabel:
+            halign: 'justify'
+            pos_hint: {'center_x': 0.6,'center_y': 0.8}
+            text: root.title
+            theme_text_color: "Custom"
+            font_style: 'H5'
+            bold:True
+            color: 1,1,1,1
+    MDBoxLayout:
+        padding: ('10dp', '10dp', '10dp', '10dp')
+        MDLabel:
+            halign: 'justify'
+            theme_text_color: "Custom"
+            font_style: 'H6'
+            text_color: app.color_text_P
+            text:"Su proceso de fabricación, distribución y consumo implica la sobreexplotación de recursos naturales que son nocivos para la naturaleza."
+
+    MDBoxLayout:
+        padding: ('20dp', '20dp', '20dp', '20dp')
+        size_hint_x: .5
+        size_hint_min_x:.4
+        orientation: 'vertical'
+
+
+    
+        MDCard:
+            pos_hint: {'center_x': 1.8,'center_y': 0.5}
+            size_hint_x: None
+            size_hint_y: None
+            width: dp(160)
+            height: dp(45)
+            focus_behavior: False
+            md_bg_color: (0,154/255,0,1)
+            radius:'25dp'
+            elevation: 0
+            padding: ('10dp', '10dp', '10dp', '10dp')
+            on_release:
+                app.category_selection_funcion(root.textbutton)
+                app.wn.screens[1].ids["screen_manager"].current = 'Home'
+                
+                
+            MDLabel:
+                text: root.textbutton
+                theme_text_color: "Custom"
+                text_color: [1,1,1,1]
+                font_style: 'Button'
+            FitImage:
+                size_hint: None, None
+                height: dp(30)
+                width: dp(30)
+                
+                pos_hint: {'center_x': 0.5,'center_y': 0.6}
+                source: root.icon
+                
+                

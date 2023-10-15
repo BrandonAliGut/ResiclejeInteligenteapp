@@ -1,0 +1,282 @@
+<Home>:
+    MDScrollView:
+        MDList:
+
+            cols: 1
+            spacing: '10dp'
+            padding: ('22dp', '22dp', '22dp', '22dp')
+            
+            MDCard:
+                orientation: 'vertical'
+                size_hint_x: .7
+                size_hint_y: None
+                height: dp(160)
+                padding: ('5dp', '5dp', '5dp', '5dp')
+                focus_behavior: False
+                pos_hint: {"center_x": .5, "center_y": .5}
+                md_bg_color: (233/255,234/255,233/255,0)
+                elevation: 0
+                
+                MDBoxLayout:
+                    orientation: 'vertical'
+                    padding: ('20dp', '20dp', '20dp', '20dp')
+                    MDLabel:
+                        text: "Entrega de reciclaje"
+                        theme_text_color: "Custom"
+                        font_style: 'H4'
+                        bold: True
+                    MDLabel:
+                        text: "¿Cómo quieres entregar tu reciclaje hoy?"
+                        theme_text_color: "Custom"
+                        bold: True
+                        font_style: 'H5'
+
+            
+            
+            MDCard:
+                orientation: 'vertical'
+                size_hint_x: .7
+                size_hint_y: None
+                height: dp(160)
+                padding: ('5dp', '5dp', '5dp', '5dp')
+                focus_behavior: False
+                pos_hint: {"center_x": .5, "center_y": .5}
+                md_bg_color: (233/255,234/255,233/255,1)
+                unfocus_color: (233/255,234/255,233/255,1)
+                focus_color: (0,154/255,0,.2)
+                radius:'20dp'
+                
+                elevation: 0
+                MDBoxLayout:
+                    padding: ('20dp', '20dp', '20dp', '20dp')
+                    MDLabel:
+                        text: "Contactar a reciclador/a y registrar entrega"
+                        theme_text_color: "Custom"
+                        font_style: 'H5'
+
+                MDBoxLayout:
+                    padding: ('20dp', '20dp', '20dp', '20dp')
+                    size_hint_x: .5
+                    size_hint_min_x:.4
+                    orientation: 'vertical'
+                
+                    MDCard:
+                        pos_hint: {'center_x': 1.8,'center_y': 0.5}
+                        size_hint_x: None
+                        size_hint_y: None
+                        width: dp(160)
+                        height: dp(45)
+                        focus_behavior: False
+                        md_bg_color: (0,154/255,0,1)
+                        radius:'25dp'
+                        elevation: 0
+                        padding: ('10dp', '10dp', '10dp', '10dp')
+                        MDLabel:
+                            text: "Contactar"
+                            theme_text_color: "Custom"
+                            text_color: [1,1,1,1]
+                            font_style: 'Button'
+                        MDIconButton:
+                            pos_hint: {'center_x': 0.5,'center_y': 0.6}
+                            icon: 'account-group'
+                            theme_icon_color: "Custom"
+                            icon_color: (1,1,1,1)
+                            icon_size: "30sp"
+                            on_release: 
+                                root.manager.transition.direction:'right'
+                                root.menu_callback("Sobre_Nosotros")
+                                     
+            MDCard:
+                orientation: 'vertical'
+                size_hint_x: .7
+                size_hint_y: None
+                height: dp(160)
+                padding: ('5dp', '5dp', '5dp', '5dp')
+                focus_behavior: False
+                pos_hint: {"center_x": .5, "center_y": .5}
+                md_bg_color: (233/255,234/255,233/255,1)
+                unfocus_color: (233/255,234/255,233/255,1)
+                focus_color: (0,154/255,0,.2)
+                radius:'20dp'
+                elevation: 0
+                MDBoxLayout:
+                    padding: ('20dp', '20dp', '20dp', '20dp')
+                    MDLabel:
+                        text: "Entregar en estación de reciclaje"
+                        theme_text_color: "Custom"
+                        font_style: 'H5'
+
+                MDBoxLayout:
+                    padding: ('20dp', '20dp', '20dp', '20dp')
+                    size_hint_x: .5
+                    size_hint_min_x:.4
+                    orientation: 'vertical'
+                
+                    MDCard:
+                        pos_hint: {'center_x': 1.8,'center_y': 0.5}
+                        size_hint_x: None
+                        size_hint_y: None
+                        width: dp(160)
+                        height: dp(45)
+                        focus_behavior: False
+                        md_bg_color: (0,154/255,0,1)
+                        radius:'25dp'
+                        elevation: 0
+                        padding: ('10dp', '10dp', '10dp', '10dp')
+                        MDLabel:
+                            text: "Contactar"
+                            theme_text_color: "Custom"
+                            text_color: [1,1,1,1]
+                            font_style: 'Button'
+                        MDIconButton:
+                            pos_hint: {'center_x': 0.5,'center_y': 0.6}
+                            icon: 'account-group'
+                            theme_icon_color: "Custom"
+                            icon_color: (1,1,1,1)
+                            icon_size: "30sp"
+
+            MDCard:
+                orientation: 'vertical'
+                size_hint_x: .7
+                size_hint_y: None
+                height: dp(160)
+                padding: ('5dp', '5dp', '5dp', '5dp')
+                focus_behavior: False
+                pos_hint: {"center_x": .5, "center_y": .5}
+                md_bg_color: (233/255,234/255,233/255,1)
+                unfocus_color: (233/255,234/255,233/255,1)
+                focus_color: (0,154/255,0,.2)
+                radius:'20dp'
+                elevation: 0
+                MDBoxLayout:
+                    padding: ('20dp', '20dp', '20dp', '20dp')
+                    MDLabel:
+                        text: "Entregar en centro de acopio"
+                        theme_text_color: "Custom"
+                        font_style: 'H5'
+
+                MDBoxLayout:
+                    padding: ('20dp', '20dp', '20dp', '20dp')
+                    size_hint_x: .5
+                    size_hint_min_x:.4
+                    orientation: 'vertical'
+                
+                    MDCard:
+                        pos_hint: {'center_x': 1.8,'center_y': 0.5}
+                        size_hint_x: None
+                        size_hint_y: None
+                        width: dp(160)
+                        height: dp(45)
+                        focus_behavior: False
+                        md_bg_color: (0,154/255,0,1)
+                        radius:'25dp'
+                        elevation: 0
+                        padding: ('10dp', '10dp', '10dp', '10dp')
+                        MDLabel:
+                            text: "Contactar"
+                            theme_text_color: "Custom"
+                            text_color: [1,1,1,1]
+                            font_style: 'Button'
+                        MDIconButton:
+                            pos_hint: {'center_x': 0.5,'center_y': 0.6}
+                            icon: 'account-group'
+                            theme_icon_color: "Custom"
+                            icon_color: (1,1,1,1)
+                            icon_size: "30sp"
+            MDCard:
+                orientation: 'vertical'
+                size_hint_x: .7
+                size_hint_y: None
+                height: dp(160)
+                padding: ('5dp', '5dp', '5dp', '5dp')
+                focus_behavior: False
+                pos_hint: {"center_x": .5, "center_y": .5}
+                md_bg_color: (233/255,234/255,233/255,1)
+                unfocus_color: (233/255,234/255,233/255,1)
+                focus_color: (0,154/255,0,.2)
+                radius:'20dp'
+                elevation: 0
+                MDBoxLayout:
+                    padding: ('20dp', '20dp', '20dp', '20dp')
+                    MDLabel:
+                        text: "Solicitar retiro a mi puerta"
+                        theme_text_color: "Custom"
+                        font_style: 'H5'
+
+                MDBoxLayout:
+                    padding: ('20dp', '20dp', '20dp', '20dp')
+                    size_hint_x: .5
+                    size_hint_min_x:.4
+                    orientation: 'vertical'
+                
+                    MDCard:
+                        pos_hint: {'center_x': 1.8,'center_y': 0.5}
+                        size_hint_x: None
+                        size_hint_y: None
+                        width: dp(160)
+                        height: dp(45)
+                        focus_behavior: False
+                        md_bg_color: (0,154/255,0,1)
+                        radius:'25dp'
+                        elevation: 0
+                        padding: ('10dp', '10dp', '10dp', '10dp')
+                        MDLabel:
+                            text: "Contactar"
+                            theme_text_color: "Custom"
+                            text_color: [1,1,1,1]
+                            font_style: 'Button'
+                        MDIconButton:
+                            pos_hint: {'center_x': 0.5,'center_y': 0.6}
+                            icon: 'account-group'
+                            theme_icon_color: "Custom"
+                            icon_color: (1,1,1,1)
+                            icon_size: "30sp"
+
+            MDCard:
+                orientation: 'vertical'
+                size_hint_x: .7
+                size_hint_y: None
+                height: dp(160)
+                padding: ('5dp', '5dp', '5dp', '5dp')
+                focus_behavior: False
+                pos_hint: {"center_x": .5, "center_y": .5}
+                md_bg_color: (233/255,234/255,233/255,1)
+                unfocus_color: (233/255,234/255,233/255,1)
+                focus_color: (0,154/255,0,.2)
+                radius:'20dp'
+                elevation: 0
+                MDBoxLayout:
+                    padding: ('20dp', '20dp', '20dp', '20dp')
+                    MDLabel:
+                        text: "Quiero saber cómo reciclar"
+                        theme_text_color: "Custom"
+                        font_style: 'H5'
+
+                MDBoxLayout:
+                    padding: ('20dp', '20dp', '20dp', '20dp')
+                    size_hint_x: .5
+                    size_hint_min_x:.4
+                    orientation: 'vertical'
+                
+                    MDCard:
+                        pos_hint: {'center_x': 1.8,'center_y': 0.5}
+                        size_hint_x: None
+                        size_hint_y: None
+                        width: dp(160)
+                        height: dp(45)
+                        focus_behavior: False
+                        md_bg_color: (0,154/255,0,1)
+                        radius:'25dp'
+                        elevation: 0
+                        padding: ('10dp', '10dp', '10dp', '10dp')
+                        MDLabel:
+                            text: "Contactar"
+                            theme_text_color: "Custom"
+                            text_color: [1,1,1,1]
+                            font_style: 'Button'
+                        MDIconButton:
+                            pos_hint: {'center_x': 0.5,'center_y': 0.6}
+                            icon: 'account-group'
+                            theme_icon_color: "Custom"
+                            icon_color: (1,1,1,1)
+                            icon_size: "30sp"

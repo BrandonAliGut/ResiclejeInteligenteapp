@@ -1,0 +1,44 @@
+<Bienvenida>:
+    name: 'bienvenida'
+   
+    md_bg_color: app.theme_cls.bg_normal
+    pos_hint:{"center_x":.5, "center_y":.9}
+
+    FitImage:
+        size_hint:1,1
+        pos_hint:{"center_x":.5, "center_y":.1}
+        source: './source/logos/loading-bg (1).jpg'
+
+    MDBoxLayout:
+        id:Cuadro_1
+        size_hint: 1, 1
+        pos_hint:{"center_x":.5, "center_y":-1}
+        orientation: 'vertical'
+        
+        MDRelativeLayout:
+            id: lbl_1
+            size_hint: 1,None
+            height: dp(250)
+            
+            pos_hint:{"center_x":.5, "center_y":.5}
+            
+            FitImage:
+                size_hint:None,None
+                width: dp(200)
+                height: dp(200)
+                pos_hint:{"center_x":.5}
+                source: './source/logos/LOGO-VERDE-PNG-150x150 (1).png'
+                
+            
+        MDBoxLayout:
+            
+            size_hint: 1, None
+            
+            pos_hint:{"center_x":.5, "center_y":.1}
+            orientation: 'vertical'
+
+
+
+               
+
+ 
