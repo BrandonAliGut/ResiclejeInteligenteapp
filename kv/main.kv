@@ -1,4 +1,4 @@
-#:import CardTransition kivy.uix.screenmanager.CardTransition
+#: import CardTransition kivy.uix.screenmanager.CardTransition
 #: import WipeTransition kivy.uix.screenmanager.WipeTransition
 #: import RiseInTransition kivy.uix.screenmanager.RiseInTransition
 #:import effect kivy.uix.effectwidget.EffectWidget
@@ -250,7 +250,7 @@
                     text_color: app.pwhite 
                     
                     size: self.texture_size
-                    text: "Nuestra innovadora app móvil está revolucionando el reciclaje en pro del impacto social y ambiental. 🌱🤝"
+                    text: "Nuestra innovadora app móvil está revolucionando el reciclaje en pro del impacto social y ambiental."
             MDRelativeLayout:
                 size_hint_y: None
                 height: dp(200)
@@ -353,7 +353,6 @@
                                 md_bg_color: app.color_bar
                                 radius: 10
                                 pos_hint: {'center_x': 0.5,'center_y': 0.4}
-
                                 FitImage:
                                     id: Image_inform
                                     size_hint: None, None
@@ -364,9 +363,7 @@
                                     padding: ('0dp', '0dp', '5dp', '10dp')
                                     pos_hint: {'center_x': 0.5,'center_y': 0.5}
                                     source: './source/Img/conservation-green-sign-ecology-nature.jpg'
-                        
-
-
+                                     
                 MDBoxLayout:
                     size_hint: None, None
                     height: griControl.width 
