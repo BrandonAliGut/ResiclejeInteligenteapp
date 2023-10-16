@@ -50,26 +50,36 @@
                                         orientation: 'vertical'
                                         size_hint_x: .7
                                         size_hint_y: None
-                                        height: dp(150)
+                                        height: titleapp.height + suptitleapp.height   + 40
                                         padding: ('5dp', '5dp', '5dp', '5dp')
                                         focus_behavior: False
                                         pos_hint: {"center_x": .5, "center_y": .5}
                                         md_bg_color: (233/255,234/255,233/255,0)
                                         elevation: 0
                                         MDBoxLayout:
+                                            size_hint_y: None
+                                            
+                                            height: titleapp.height + suptitleapp.height   + 10
                                             orientation: 'vertical'
+                                            id: boxtitleapp
                                             padding: ('20dp', '20dp', '20dp', '20dp')
                                             spacing: '20dp'
                                             MDLabel:
+                                                id: titleapp
                                                 text: "Entrega de reciclaje"
                                                 theme_text_color: "Custom"
                                                 font_style: 'H4'
                                                 bold: True
+                                                size_hint_y: None
+                                                size: self.texture_size
                                             MDLabel:
+                                                id: suptitleapp
                                                 text: "¿Cómo quieres entregar tu reciclaje hoy?"
                                                 theme_text_color: "Custom"
                                                 bold: True
                                                 font_style: 'H5'
+                                                size_hint_y: None
+                                                size: self.texture_size
                                                 
 
                                     
@@ -118,19 +128,29 @@
                                         md_bg_color: (233/255,234/255,233/255,0)
                                         elevation: 0
                                         MDBoxLayout:
+                                          
+                                            id: boxtitleapp
                                             orientation: 'vertical'
+                                            size_hint_y: None
+                                            height: titleInfo.height + suptitleInfo.height   + 70
                                             padding: ('20dp', '20dp', '20dp', '20dp')
                                             spacing: '10dp'
                                             MDLabel:
+                                                id: titleInfo
                                                 text: "Tipos de Materiales"
                                                 theme_text_color: "Custom"
                                                 font_style: 'H4'
                                                 bold: True
+                                                size_hint_y: None
+                                                size: self.texture_size
                                             MDLabel:
+                                                id: suptitleInfo
                                                 text: "Seleccione el material"
                                                 theme_text_color: "Custom"
                                                 bold: True
                                                 font_style: 'H5'
+                                                size_hint_y: None
+                                                size: self.texture_size
                                     Card_Category:
                                         title:"Papel"
                                         textbutton:"Contactar"
@@ -174,10 +194,10 @@
         orientation: 'vertical'
     
         MDCard:
-            pos_hint: {'center_x': 1.8,'center_y': 0.5}
+            pos_hint: {'center_x': 1.75,'center_y': 0.5}
             size_hint_x: None
             size_hint_y: None
-            width: dp(160)
+            width: dp(180)
             height: dp(45)
             focus_behavior: False
             md_bg_color: (0,154/255,0,1)
@@ -223,9 +243,10 @@
                 
                 orientation: 'vertical'
                 size_hint_y: None
+                height: text1.height +text01.height   + 70
                 radius: dp(20)
                 md_bg_color: 1,1,1,0
-                height: text1.height +text01.height   + 70
+                
                 spacing:dp(10)
                 padding: [10,]
                 MDLabel:
